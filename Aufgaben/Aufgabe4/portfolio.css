@@ -1,0 +1,143 @@
+
+/* Grundeinstellung */
+
+body{
+    background-image: url("./Bilder/See.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100% 450px; 
+}
+
+.main{
+
+    width: 800px;
+    margin-left: 20% ;
+    margin-right: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+main{
+    margin-top: 360px;
+    padding-bottom: 50px;
+}
+
+/* Footer */
+
+footer{
+    background-color: #eaeaea; 
+    width: 100%;
+    
+    }
+    
+    #footer{
+        display: table;
+        width: 100%;
+        width: 800px;
+        margin-left: 20% ;
+        margin-right: auto;
+    
+    }
+    
+    #spalte{
+        display: table-cell;
+        width: 33%;
+    }
+
+/* Navigation */
+
+nav {
+
+    border: none;
+    overflow: hidden;
+    display: block; 
+    padding: 2em;
+    
+ }
+    
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    float: left;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style-type: none;
+    }
+
+li a{
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-container {
+ color: black;
+ display:inline;
+ float: top-right; 
+ 
+}
+
+.active{
+    text-decoration: underline;
+    color: white;
+}
+
+a:hover{
+ text-decoration: underline;
+    color: white;
+}
+
+/* Bilder */
+
+.logo {
+    display: inline;
+    float: left;
+    margin-top: 2.5rem;
+}
+
+/* Kontaktformular */
+
+#input-name{
+background-color: gray;
+padding-right: 200px;
+padding: 5px;
+width: 350px;
+border: none;
+
+}
+
+#input-email{
+background-color: gray;
+padding-right: 200px;
+border: none;
+padding: 5px;
+width: 350px ;
+
+}
+
+#input-message{
+background-color: gray;
+padding-bottom: 200px;
+width: 358px;
+border: none;
+
+
+}
+
+::placeholder{
+color: white;
+font-weight: bold;
+
+}
+
+button{
+background-color: gray;
+color: white;
+font-weight: bold;
+border: none;
+
+}
+
+
+
+
+
