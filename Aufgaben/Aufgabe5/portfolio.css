@@ -1,0 +1,240 @@
+
+/* Grundeinstellung */
+
+body {
+    animation: Hintergrund 4s infinite;  
+    background-repeat: no-repeat;
+    background-size: 100% 450px; 
+}
+
+.banner{
+position: fixed;
+background-color: black;
+color: white;
+width: 600px;
+text-align: center;
+transform: rotate(30deg);
+right: -150px;
+top: 30px;
+}
+ @keyframes Hintergrund{
+    
+0%{
+
+    background-image: url("./Bilder/See.jpg");
+}
+
+30%{
+
+    background-image: url("./Bilder/Sunset2.jpg");
+}
+
+60%{
+    background-image: url("./Bilder/regenbogen.jpeg");
+}
+
+100%{
+    background-image: url("./Bilder/See.jpg");
+}
+
+ 
+}
+
+
+.main, .footer, .spalte{
+
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Comfortaa', cursive;
+   
+   
+    
+
+}
+
+h1{
+
+    margin-bottom: -10px;
+    font-size: 50px;
+    font-style: italic;
+}
+
+h2{
+
+font-size: 30px;
+}
+
+
+.main img:hover{
+transform: scale(110%);
+-webkit-transform:scale(1.1);
+
+}
+
+.main img{
+
+    transition: all 0.5s ease;
+}
+
+main{
+    margin-top: 380px;
+    padding-bottom: 60px;
+}
+
+/* Footer */
+
+footer{
+    background-color: #eaeaea; 
+    width: 100%;
+    
+    
+    }
+    
+    .footer{
+        display: table;
+        width: 100%;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+       
+    
+    }
+    
+    .spalte{
+        display: table-cell;
+        width: 33%;
+        
+    }
+
+    .spalte img{
+        opacity: 0.2;
+    }
+
+    .spalte img:hover{
+    opacity: 1;
+    }
+
+    #spalteMitte{
+        text-align: center;
+    }
+
+    #spalteRechts{
+        text-align: right;
+    }
+   
+
+/* Navigation */
+
+nav {
+
+    border: none;
+    overflow: hidden;
+    display: block; 
+    padding: 2em;
+    
+ }
+    
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    float: left;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style-type: none;
+    }
+
+li a{
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-container {
+ color: black;
+ display:inline;
+ float: top-right; 
+ 
+}
+
+.active{
+    text-decoration: underline;
+    color: white;
+}
+
+a:hover{
+ text-decoration: underline;
+    color: white;
+}
+
+/* Bilder */
+
+.logo { 
+    display: inline;
+    float: left;
+    margin-top: 2.5rem;
+
+}
+
+/* Kontaktformular */
+
+#input-name{
+background-color: gray;
+padding-right: 200px;
+padding: 5px;
+width: 350px;
+border: none;
+
+}
+
+#input-email{
+background-color: gray;
+padding-right: 200px;
+border: none;
+padding: 5px;
+margin-top: 5px;
+width: 350px ;
+
+}
+
+#input-message{
+background-color: gray;
+padding-bottom: 200px;
+margin-top: 5px;
+width: 356px;
+border: none;
+
+
+}
+
+::placeholder{
+color: white;
+font-weight: bold;
+
+}
+
+button{
+background-color: gray;
+color: white;
+font-weight: bold;
+border: none;
+margin-top: 5px;
+
+}
+
+@media ( max-width: 1092px) {
+
+
+
+.banner{
+
+display: none;
+}
+
+
+}
+
+
+
+
+
