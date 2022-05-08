@@ -14,10 +14,10 @@ const RelativFRzuEU = Math.abs((Frankreich22 / Europa22) * 100).toFixed(2);
 const RelativITzuEU = Math.abs((Italien22 / Europa22) * 100).toFixed(2);
 const RelativKRzuEU = Math.abs((Kroatien22 / Europa22) * 100).toFixed(2);
 //Differenz der Länder//
-const DifferenzDE = Math.abs((Deutschland22 - Deutschland12).toFixed(2));
-const DifferenzFR = Math.abs((Frankreich22 - Frankreich12).toFixed(2));
-const DifferenzIT = Math.abs((Italien22 - Italien12).toFixed(2));
-const DifferenzKR = Math.abs((Kroatien22 - Kroatien12).toFixed(2));
+const DifferenzDE = Math.abs(Deutschland22 - Deutschland12).toFixed(2);
+const DifferenzFR = Math.abs(Frankreich22 - Frankreich12).toFixed(2);
+const DifferenzIT = Math.abs(Italien22 - Italien12).toFixed(2);
+const DifferenzKR = Math.abs(Kroatien22 - Kroatien12).toFixed(2);
 //Wachstumsrate seit 2012//
 const WachstumsrateDE12 = Math.abs((DifferenzDE / Deutschland22) * 100).toFixed(2);
 const WachstumsrateFR12 = Math.abs((DifferenzFR / Frankreich22) * 100).toFixed(2);
