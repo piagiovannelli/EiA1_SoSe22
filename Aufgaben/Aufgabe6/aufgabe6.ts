@@ -27,10 +27,10 @@ const DifferenzIT: number = Math.abs((Italien22 - Italien12).toFixed(2);
 const DifferenzKR: number = Math.abs((Kroatien22 -Kroatien12).toFixed(2);
 
 //Wachstumsrate seit 2012//
-const WachstumsrateDE12: number = Math.abs((DifferenzDE / Deutschland22).toFixed(2);
-const WachstumsrateFR12: number = Math.abs((DifferenzFR / Frankreich22).toFixed(2);
-const WachstumsrateIT12: number = Math.abs((DifferenzIT / Italien22).toFixed(2);
-const WachstumsrateKR12: number = Math.abs((DifferenzKR / Kroatien22).toFixed(2);
+const WachstumsrateDE12: number = Math.abs((DifferenzDE / Deutschland22) * 100).toFixed(2);
+const WachstumsrateFR12: number = Math.abs((DifferenzFR / Frankreich22) * 100).toFixed(2);
+const WachstumsrateIT12: number = Math.abs((DifferenzIT / Italien22) *100).toFixed(2);
+const WachstumsrateKR12: number = Math.abs((DifferenzKR / Kroatien22) * 100).toFixed(2);
 
 
 //console.log//
