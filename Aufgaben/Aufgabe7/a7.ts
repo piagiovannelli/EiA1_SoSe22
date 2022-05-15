@@ -1,5 +1,5 @@
 //Einwohnerzahl Länder//
-const Europa22: number = 750.58; 
+const Europa22: number = 447.7; 
 const Europa12: number = 440.55;
 
 

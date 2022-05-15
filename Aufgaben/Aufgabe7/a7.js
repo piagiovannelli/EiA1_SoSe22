@@ -1,5 +1,5 @@
 //Einwohnerzahl Länder//
-const Europa22 = 750.58;
+const Europa22 = 447.7;
 const Europa12 = 440.55;
 const Deutschland22 = 83.75;
 const Deutschland12 = 80.84;
