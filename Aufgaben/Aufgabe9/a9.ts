@@ -55,6 +55,13 @@ function Remix (): void {
 
 //Funktion Play button geht noch nicht
 
+function myBeat(): void {
+    playSample(beat[zaehler]);
+    zaehler += 1;
+    if (zaehler > (beat.length - 1))
+    zaehler = 0;
+}
+
 function playBeat(audio: string): void {
 
     var beat: HTMLAudioElement = new Audio (audio);
@@ -93,9 +100,7 @@ document.querySelector(".pad-7").addEventListener("click", function (): void { p
 document.querySelector(".pad-8").addEventListener("click", function (): void { playSample(sounds[7]); });
 document.querySelector(".pad-9").addEventListener("click", function (): void { playSample(sounds[8]); });
 
-document.querySelector("#play").addEventListener("click", function (): void { playBeat(beat[0]); });
-document.querySelector("#play").addEventListener("click", function (): void { playBeat(beat[1]); });
-document.querySelector("#play").addEventListener("click", function (): void { playBeat(beat[2]); });
+document.querySelector("#play").addEventListener("click", playBeat);
 document.querySelector("#remix").addEventListener("click", function (): void { Remix(); });
 
 }

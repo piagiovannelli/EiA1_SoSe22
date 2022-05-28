@@ -42,6 +42,12 @@ function Remix() {
     }
 }
 //Funktion Play button geht noch nicht
+function myBeat() {
+    playSample(beat[zaehler]);
+    zaehler += 1;
+    if (zaehler > (beat.length - 1))
+        zaehler = 0;
+}
 function playBeat(audio) {
     var beat = new Audio(audio);
     beat.loop = true;
@@ -73,9 +79,7 @@ function addClickListenerDrumpad() {
     document.querySelector(".pad-7").addEventListener("click", function () { playSample(sounds[6]); });
     document.querySelector(".pad-8").addEventListener("click", function () { playSample(sounds[7]); });
     document.querySelector(".pad-9").addEventListener("click", function () { playSample(sounds[8]); });
-    document.querySelector("#play").addEventListener("click", function () { playBeat(beat[0]); });
-    document.querySelector("#play").addEventListener("click", function () { playBeat(beat[1]); });
-    document.querySelector("#play").addEventListener("click", function () { playBeat(beat[2]); });
+    document.querySelector("#play").addEventListener("click", playBeat);
     document.querySelector("#remix").addEventListener("click", function () { Remix(); });
 }
 //# sourceMappingURL=a9.js.map
