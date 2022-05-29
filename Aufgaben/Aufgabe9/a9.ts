@@ -32,76 +32,64 @@ function playSample(soundQuelle: string): void {
 //Funktion Remix
 function Remix (): void {
 
-    clearInterval (interval);
-    clearInterval(beatremix);
 
-    if (document.querySelector("#stop").getAttribute("class") == "far fa-stop") {
-        document.querySelector("#play").setAttribute("class", "far fa-play");
+    document.querySelector("#remix").addEventListener("click", function():void {
+
+            beatremix = setInterval(function (): void {
+            playSample( beat [zaehler] );
+            zaehler = Math.floor(Math.random () * 9);
+            },
+            300);
+            });
     }
 
-    beat = [];
-    for (var r: number = 0; r < 5; r++) {
-        beat.push(sounds[Math.ceil(Math.random() * 6)]);
-    }
-    beatremix= setInterval (playRemix, 300);
 
-    function playRemix(): void {
-        playSample (beat[zaehler]);
-        zaehler++;
-        if (zaehler == 6) { zaehler = 0;}
+//Funktion Play button 
 
-    }
+
+function PlayBeat(): void {
+
+if (document.getElementById("play").classList.contains("fa-play")) {
+    document.getElementById("play").classList.remove("fa-play");
+    document.getElementById("play").classList.add("fa-stop");
+    interval = setInterval(myBeat, 350);
+
 }
+else {
+document.getElementById("play").classList.remove("fa-stop");
+document.getElementById("play").classList.add("fa-play");
+clearInterval(interval);
 
-//Funktion Play button geht noch nicht
+}
 
 function myBeat(): void {
     playSample(beat[zaehler]);
     zaehler += 1;
     if (zaehler > (beat.length - 1))
     zaehler = 0;
-}
-
-function playBeat(audio: string): void {
-
-    var beat: HTMLAudioElement = new Audio (audio);
-    beat.loop = true;
-
-    if (document.getElementById("play").classList.contains("fa-play")) {
-        document.getElementById("play").classList.remove("fa-play");
-        document.getElementById("play").classList.add("fa-stop");
-        interval = setInterval (tonbeat, 350);
-    }
-    else {
-        document.getElementById("play").classList.remove("fa-stop");
-        document.getElementById("play").classList.add("fa-play");
-        clearInterval (interval);
-    }
-
-    function tonbeat(): void {
-        playSample(beat[zaehler]);
-        zaehler++;
-        if (zaehler == 2) { zaehler = 0;}
-    }
-
-
-}
-
     
+    }
+
+}
+
+
+
+
 function addClickListenerDrumpad(): void {
 
-document.querySelector(".pad-1").addEventListener("click", function (): void { playSample(sounds[0]); });
-document.querySelector(".pad-2").addEventListener("click", function (): void { playSample(sounds[1]); });
-document.querySelector(".pad-3").addEventListener("click", function (): void { playSample(sounds[2]); });
-document.querySelector(".pad-4").addEventListener("click", function (): void { playSample(sounds[3]); });
-document.querySelector(".pad-5").addEventListener("click", function (): void { playSample(sounds[4]); });
-document.querySelector(".pad-6").addEventListener("click", function (): void { playSample(sounds[5]); });
-document.querySelector(".pad-7").addEventListener("click", function (): void { playSample(sounds[6]); });
-document.querySelector(".pad-8").addEventListener("click", function (): void { playSample(sounds[7]); });
-document.querySelector(".pad-9").addEventListener("click", function (): void { playSample(sounds[8]); });
+document.querySelector(".pad-1").addEventListener("click", function ():void { playSample(sounds[0]); });
+document.querySelector(".pad-2").addEventListener("click", function ():void { playSample(sounds[1]); });
+document.querySelector(".pad-3").addEventListener("click", function ():void { playSample(sounds[2]); });
+document.querySelector(".pad-4").addEventListener("click", function ():void { playSample(sounds[3]); });
+document.querySelector(".pad-5").addEventListener("click", function ():void { playSample(sounds[4]); });
+document.querySelector(".pad-6").addEventListener("click", function ():void { playSample(sounds[5]); });
+document.querySelector(".pad-7").addEventListener("click", function ():void { playSample(sounds[6]); });
+document.querySelector(".pad-8").addEventListener("click", function ():void { playSample(sounds[7]); });
+document.querySelector(".pad-9").addEventListener("click", function ():void { playSample(sounds[8]); });
 
-document.querySelector("#play").addEventListener("click", playBeat);
-document.querySelector("#remix").addEventListener("click", function (): void { Remix(); });
+
+document.querySelector("#play").addEventListener("click", PlayBeat);
+document.querySelector("#remix").addEventListener("click", function (): void {Remix(); });
 
 }
 
