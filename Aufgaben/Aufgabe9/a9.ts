@@ -72,9 +72,6 @@ function myBeat(): void {
 
 }
 
-
-
-
 function addClickListenerDrumpad(): void {
 
 document.querySelector(".pad-1").addEventListener("click", function (): void { playSample(sounds[0]); });
