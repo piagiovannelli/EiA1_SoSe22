@@ -1,49 +1,47 @@
 body {
-    background-color: #472433;
-}
-
-h1 {
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 60px;
-    color: white;
-    text-align: center ;
-    
-}
-
-h4 {
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: white;
-    text-align: center;
+    background-color: rgb(159, 194, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 710px;
 }
 
 .app {
     width: 500px;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 18px;
 }
 
 .task {
     position: absolute;
+    margin-top: 60px;
     margin-left: 60px;
 }
 
 input {
     font-size: 18px;
-    font-family: sans-serif;
-    color: #000000;
     width: 350px;
     height: 30px;
-    background-color: #ffb5d1; 
     border: 0;
-    padding: 12px;
     border-radius: 10px;
+    padding: 12px;
+}
+
+p {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 180px;
 }
 
 #btn {
-    color: #536b4c;
     font-size: 30px;
     position: absolute;
     margin-top: 10px;
@@ -51,12 +49,9 @@ input {
 }
 
 #neuesDiv {
-    font-family: sans-serif;
     font-size: 15px;
     float: center;
-    margin-top: 7px;
-    color: #fff0fb;
-    background-color: #331728;  
+    margin-top: 10px;
     border-radius: 10px;
     width: 350px;
     height: 40px;
@@ -91,4 +86,23 @@ input {
     margin-top: 10px;
     margin-left: 10px;
     opacity: 100%;
+}
+
+
+
+.addline {
+display: flex;
+justify-content: space-between;
+height: 50px;
+}
+
+#addtask {
+    width: 250px;
+    border-style: solid;
+    text-align: center;
+}
+
+#button {
+    width: 50px;
+    font-size: 35px;
 }
