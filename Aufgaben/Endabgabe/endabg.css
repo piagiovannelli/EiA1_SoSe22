@@ -9,61 +9,71 @@ body{
     
 }
 
-header{
-
-    position: relative;
-    margin: auto;
-    background-color: aquamarine;
-
-}
 main{
 
-    background-color: rgb(247, 143, 31);
+    background-color: rgb(243, 231, 161);
     position: relative;
     width: 375px;
-    height: 500px;
+    height: 467px;
     margin-bottom: -17px;
 
+}
+
+header{
+
+    background-color: rgb(243, 166, 72);
+    width: 375px;
+    height: 100px;
 }
 
 footer{
 
 
-background-color: rgb(247, 143, 31);
+background-color: rgb(243, 166, 72);
 position: relative;
 margin: auto;
 width: 375px;
-height: 167px;
+height: 100px;
 
 }
 
 p{
 
-    padding-top: 120px;
+    padding-top: 50px;
 }
 
 
 a{
 
     text-decoration: none;
+    color: black;
 }
 
 h1{
+font-family: inherit;
+padding-top: 30px;
 
-    padding-bottom: 230px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 button{
 
-  width: 100px;
-  height: 30px;
-  text-align: center;
+width: 60px;
+height: 30px;
+text-align: center;
+margin-top: 200px;
+border-radius: 30px;
+border: none;
+background-color: rgba(255, 53, 34, 0.679);
+margin-left: 20px;
+margin-right: 20px;
+
 
  
  
    
 }
+
+
 
 
 
