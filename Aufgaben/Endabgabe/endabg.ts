@@ -21,61 +21,61 @@ var saetze: Satz[] = [ //Anfang von array
 
 },
 {
-    satzSpanisch: "¿Cómo estás?".split(" "),
+    satzSpanisch: "¿Cómo estás?".split("  "),
     satzDeutsch: "Wie geht es dir?".split(" "),
 },
 {
-    satzSpanisch: "¿De dónde eres?".split(" "),
-    satzDeutsch: "Woher kommst du?".split(" "),
+    satzSpanisch: "¿De dónde eres?".split("  "),
+    satzDeutsch: "Woher kommst du?".split("  "),
 },
 {
     satzSpanisch: "¿Cuándo es tu cumpleaños?".split(" "),
     satzDeutsch: "Wann hast du Geburstag?".split(" "),
 },
 {
-    satzSpanisch: "¿Qué le gusta hacer en su tiempo libre?".split(" "),
-    satzDeutsch: "Was unternimmst du gerne in deiner Freizeit?".split(" "),
+    satzSpanisch: "¿Qué le gusta hacer en su tiempo libre?".split("  "),
+    satzDeutsch: "Was unternimmst du gerne in deiner Freizeit?".split("  "),
 },
 {
 
-    satzSpanisch: "Ayer me comí una torta.".split(" "),
-    satzDeutsch: "Ich habe gestern einen Kuchen gegessen.".split(" "),
+    satzSpanisch: "Ayer me comí una torta.".split("  "),
+    satzDeutsch: "Ich habe gestern einen Kuchen gegessen.".split("  "),
 },
 {
-    satzSpanisch: "Tanja y Luna son mejores amigas desde el jardín de infancia.".split(" "),
-    satzDeutsch: "Tanja und Luna sind beste Freundinnen seit dem Kindergarten".split(" "),
+    satzSpanisch: "Tanja y Luna son mejores amigas desde el jardín de infancia.".split("  "),
+    satzDeutsch: "Tanja und Luna sind beste Freundinnen seit dem Kindergarten".split("  "),
 },
 {
-    satzSpanisch: "La capital de España es Madrid.".split(" "),
-    satzDeutsch: "Die Hauptstadt in Spanien ist Madrid.".split(" "),
+    satzSpanisch: "La capital de España es Madrid.".split("  "),
+    satzDeutsch: "Die Hauptstadt in Spanien ist Madrid.".split("  "),
 },
 {
-    satzSpanisch: "Cuando dos se pelean, el tercero es feliz.".split(" "),
-    satzDeutsch: "Wenn zwei sich streiten, freut sich der Dritte.".split(" "),
+    satzSpanisch: "Cuando dos se pelean, el tercero es feliz.".split("  "),
+    satzDeutsch: "Wenn zwei sich streiten, freut sich der Dritte.".split("  "),
 },
 {
-    satzSpanisch: "Ya no tengo ganas de trabajar.".split(" "),
-    satzDeutsch: "Ich habe keine Lust mehr zu arbeiten.".split(" "),
+    satzSpanisch: "Ya no tengo ganas de trabajar.".split("  "),
+    satzDeutsch: "Ich habe keine Lust mehr zu arbeiten.".split("  "),
 },
 {
-    satzSpanisch: "¿Qué edad tiene tu hermano mayor?".split(" "),
-    satzDeutsch: "Wie alt ist dein großer Bruder?".split(" "),
+    satzSpanisch: "¿Qué edad tiene tu hermano mayor?".split("  "),
+    satzDeutsch: "Wie alt ist dein großer Bruder?".split("  "),
 },
 {
-    satzSpanisch: "Mi abuela, por parte de mi madre, tiene 88 años.".split(" "),
-    satzDeutsch: "Meine Großmutter, mütterlicherseits, ist 88 Jahre alt.".split(" "),
+    satzSpanisch: "Mi abuela, por parte de mi madre, tiene 88 años.".split("  "),
+    satzDeutsch: "Meine Großmutter, mütterlicherseits, ist 88 Jahre alt.".split("  "),
 },
 {
-    satzSpanisch: "Mi día favorito es el martes.".split(" "),
-    satzDeutsch: "Mein Lieblingstag ist Dienstag.".split(" "),
+    satzSpanisch: "Mi día favorito es el martes.".split("  "),
+    satzDeutsch: "Mein Lieblingstag ist Dienstag.".split("  "),
 },
 {
-    satzSpanisch: "Una bebida típica española es la sangría.".split(" "),
-    satzDeutsch: "Ein typisch spanisches Getränk ist Sangria.".split(" "),
+    satzSpanisch: "Una bebida típica española es la sangría.".split("  "),
+    satzDeutsch: "Ein typisch spanisches Getränk ist Sangria.".split("  "),
 },
 {
-    satzSpanisch: "El cielo es azul".split(" "),
-    satzDeutsch: "Der Himmel ist blau".split(" "),
+    satzSpanisch: "El cielo es azul".split("  "),
+    satzDeutsch: "Der Himmel ist blau".split("   "),
 },
 
 ];
