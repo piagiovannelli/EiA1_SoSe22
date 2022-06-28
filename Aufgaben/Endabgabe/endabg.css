@@ -1,0 +1,101 @@
+
+body{
+
+    text-align: center;
+    position: relative;
+    width: 375px;
+    height: 667px;
+    margin: auto;
+   
+    
+}
+
+main{
+
+    background-color: rgb(243, 231, 161);
+    position: relative;
+    width: 375px;
+    height: 467px;
+    margin-bottom: -14px;
+
+}
+
+header{
+
+    background-color: rgb(243, 166, 72);
+    width: 375px;
+    height: 100px;
+    margin-bottom: -24px;
+    position: relative;
+  
+}
+
+footer{
+
+
+background-color: rgb(243, 166, 72);
+position: relative;
+margin: auto;
+width: 375px;
+height: 100px;
+margin-top: 14px;
+
+}
+
+button{
+
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    margin-top: 80px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(255, 53, 34, 0.679);
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+    
+
+
+a{
+
+    text-decoration: none;
+    color: black;
+}
+
+
+#Überschrift{  
+font-family: inherit;
+padding-top: 35px;
+
+}
+
+#name{
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: medium;
+font-weight: normal;
+padding-top: 35px;
+
+}
+
+#Ende{
+
+
+}
+
+#Schwierigkeitsstufe{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    font-size: x-large;
+    padding-top: 15px;
+
+
+}
+
+
+
+
+
+
