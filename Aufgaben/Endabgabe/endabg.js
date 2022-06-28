@@ -76,25 +76,24 @@ function shuffleArray(array) {
 }
 shuffleArray(saetze);
 function init() {
-    spiel.classList.add("hidden");
-    ende.classList.add("hidden");
+    spiel.classList.add("versteckt");
+    ende.classList.add("versteckt");
     document.getElementById("leicht").onclick = function () {
         anzahlSätze = 5;
-        shuffleArray(Array);
-        schwierig.classList.add("hidden");
-        spiel.classList.remove("hidden");
+        schwierig.classList.add("versteckt");
+        spiel.classList.remove("versteckt");
         neuerSatz();
     };
     document.getElementById("mittel").onclick = function () {
         anzahlSätze = 10;
-        schwierig.classList.add("hidden");
-        spiel.classList.remove("hidden");
+        schwierig.classList.add("versteckt");
+        spiel.classList.remove("versteckt");
         neuerSatz();
     };
     document.getElementById("schwierig").onclick = function () {
         anzahlSätze = 15;
-        schwierig.classList.add("hidden");
-        spiel.classList.remove("hidden");
+        schwierig.classList.add("versteckt");
+        spiel.classList.remove("versteckt");
         neuerSatz();
     };
 }
