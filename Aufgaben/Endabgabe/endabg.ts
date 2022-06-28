@@ -16,66 +16,66 @@ interface Satz { //Definition von satzSpanisch und satzDeutsch als strings
 
 var saetze: Satz[] = [ //Anfang von array
 {
-    satzSpanisch: 'Hola, ¡me llamo Pia!'.split(' '), // wie macht man das, dass das Fragezeichen als einzelenes wort dann anklickbar ist?
-    satzDeutsch: 'Hallo,Ich heiße Pia!'.split(' '),
+    satzSpanisch: "Hola, ¡me llamo Pia!".split(" "), // wie macht man das, dass das Fragezeichen als einzelenes wort dann anklickbar ist?
+    satzDeutsch: "Hallo,Ich heiße Pia!".split(" "),
 
 },
 {
-    satzSpanisch: '¿Cómo estás?'.split(' '),
-    satzDeutsch: 'Wie geht es dir?'.split(' '),
+    satzSpanisch: "¿Cómo estás?".split(" "),
+    satzDeutsch: "Wie geht es dir?".split(" "),
 },
 {
-    satzSpanisch: '¿De dónde eres?'.split(' '),
-    satzDeutsch: 'Woher kommst du?'.split(' '),
+    satzSpanisch: "¿De dónde eres?".split(" "),
+    satzDeutsch: "Woher kommst du?".split(" "),
 },
 {
-    satzSpanisch: '¿Cuándo es tu cumpleaños?'.split(' '),
-    satzDeutsch: 'Wann hast du Geburstag?'.split(' '),
+    satzSpanisch: "¿Cuándo es tu cumpleaños?".split(" "),
+    satzDeutsch: "Wann hast du Geburstag?".split(" "),
 },
 {
-    satzSpanisch: '¿Qué le gusta hacer en su tiempo libre?'.split(' '),
-    satzDeutsch: 'Was unternimmst du gerne in deiner Freizeit?'.split(' '),
+    satzSpanisch: "¿Qué le gusta hacer en su tiempo libre?".split(" "),
+    satzDeutsch: "Was unternimmst du gerne in deiner Freizeit?".split(" "),
 },
 {
 
-    satzSpanisch: 'Ayer me comí una torta.'.split(' '),
-    satzDeutsch: 'Ich habe gestern einen Kuchen gegessen.'.split(' '),
+    satzSpanisch: "Ayer me comí una torta.".split(" "),
+    satzDeutsch: "Ich habe gestern einen Kuchen gegessen.".split(" "),
 },
 {
-    satzSpanisch: 'Tanja y Luna son mejores amigas desde el jardín de infancia.'.split(' '),
-    satzDeutsch: 'Tanja und Luna sind beste Freundinnen seit dem Kindergarten'.split(' '),
+    satzSpanisch: "Tanja y Luna son mejores amigas desde el jardín de infancia.".split(" "),
+    satzDeutsch: "Tanja und Luna sind beste Freundinnen seit dem Kindergarten".split(" "),
 },
 {
-    satzSpanisch: 'La capital de España es Madrid.'.split(' '),
-    satzDeutsch: 'Die Hauptstadt in Spanien ist Madrid.'.split(' '),
+    satzSpanisch: "La capital de España es Madrid.".split(" "),
+    satzDeutsch: "Die Hauptstadt in Spanien ist Madrid.".split(" "),
 },
 {
-    satzSpanisch: 'Cuando dos se pelean, el tercero es feliz.'.split(' '),
-    satzDeutsch: 'Wenn zwei sich streiten, freut sich der Dritte.'.split(' '),
+    satzSpanisch: "Cuando dos se pelean, el tercero es feliz.".split(" "),
+    satzDeutsch: "Wenn zwei sich streiten, freut sich der Dritte.".split(" "),
 },
 {
-    satzSpanisch: 'Una enfermedad es una perturbación del funcionamiento normal de un órgano o parte del cuerpo, incluido el bienestar mental y espiritual.'.split(' '),
-    satzDeutsch: 'Eine Krankheit ist eine Störung des normalen Funktionierens eines Organs oder eines Teils des Körpers, einschließlich des geistigen und seelischen Wohlbefindens.'.split(' '),
+    satzSpanisch: "Ya no tengo ganas de trabajar.".split(" "),
+    satzDeutsch: "Ich habe keine Lust mehr zu arbeiten.".split(" "),
 },
 {
-    satzSpanisch: '¿Qué edad tiene tu hermano mayor?'.split(' '),
-    satzDeutsch: 'Wie alt ist dein großer Bruder?'.split(' '),
+    satzSpanisch: "¿Qué edad tiene tu hermano mayor?".split(" "),
+    satzDeutsch: "Wie alt ist dein großer Bruder?".split(" "),
 },
 {
-    satzSpanisch: 'Mi abuela, por parte de mi madre, tiene 88 años.'.split(' '),
-    satzDeutsch: 'Meine Großmutter, mütterlicherseits, ist 88 Jahre alt.'.split(' '),
+    satzSpanisch: "Mi abuela, por parte de mi madre, tiene 88 años.".split(" "),
+    satzDeutsch: "Meine Großmutter, mütterlicherseits, ist 88 Jahre alt.".split(" "),
 },
 {
-    satzSpanisch: 'Mi día favorito es el martes.'.split(' '),
-    satzDeutsch: 'Mein Lieblingstag ist Dienstag.'.split(' '),
+    satzSpanisch: "Mi día favorito es el martes.".split(" "),
+    satzDeutsch: "Mein Lieblingstag ist Dienstag.".split(" "),
 },
 {
-    satzSpanisch: 'Una bebida típica española es la sangría.'.split(' '),
-    satzDeutsch: 'Ein typisch spanisches Getränk ist Sangria.'.split(' '),
+    satzSpanisch: "Una bebida típica española es la sangría.".split(" "),
+    satzDeutsch: "Ein typisch spanisches Getränk ist Sangria.".split(" "),
 },
 {
-    satzSpanisch: ''.split(' '),
-    satzDeutsch: ''.split(' '),
+    satzSpanisch: "El cielo es azul".split(" "),
+    satzDeutsch: "Der Himmel ist blau".split(" "),
 },
 
 ];
@@ -89,21 +89,22 @@ function shuffleArray(array) {
     }
 }
 shuffleArray(saetze);
-
-spiel.classList.add("versteckt");
-ende.classList.add("versteckt");
+function init(){
+spiel.classList.add("hidden");
+ende.classList.add("hidden");
 
 document.getElementById("leicht").onclick = function() {
     anzahlSätze = 5;
-    schwierig.classList.add("versteckt");
-    spiel.classList.remove("versteckt");
+    shuffleArray(Array);
+    schwierig.classList.add("hidden");
+    spiel.classList.remove("hidden");
     neuerSatz();
 }
 
 document.getElementById("mittel").onclick = function() {
     anzahlSätze = 10;
-    schwierig.classList.add("versteckt");
-    spiel.classList.remove("versteckt");
+    schwierig.classList.add("hidden");
+    spiel.classList.remove("hidden");
     neuerSatz();
 
 
@@ -111,11 +112,11 @@ document.getElementById("mittel").onclick = function() {
 
 document.getElementById("schwierig").onclick = function() {
     anzahlSätze = 15;
-    schwierig.classList.add("versteckt");
-    spiel.classList.remove("versteckt");
+    schwierig.classList.add("hidden");
+    spiel.classList.remove("hidden");
     neuerSatz(); 
 
-}
+}} 
 
 function wortKlick(wort) {
 
@@ -182,3 +183,8 @@ function neuerSatz() {
     }
 }
 
+document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+        init();
+    }
+});
