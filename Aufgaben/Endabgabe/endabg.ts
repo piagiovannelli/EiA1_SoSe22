@@ -16,7 +16,7 @@ interface Satz { //Definition von satzSpanisch und satzDeutsch als strings
 
 var saetze: Satz[] = [ //Anfang von array
 {
-    satzSpanisch: "Hola, ¡me llamo Pia!".split(" "), // wie macht man das, dass das Fragezeichen als einzelenes wort dann anklickbar ist?
+    satzSpanisch: "Hola, ¡me llamo Pia!".split(" "), // die Wörter sind einzeln gesplittet/werden einzeln gelesen
     satzDeutsch: "Hallo,Ich heiße Pia!".split(" "),
 
 },
@@ -78,29 +78,29 @@ var saetze: Satz[] = [ //Anfang von array
     satzDeutsch: "Der Himmel ist blau".split("   "),
 },
 
-];
+]; // Array Ende
 
 
 
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i --) {
-        var j= Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[j], array[i]];
+function shuffleArray(array) { //random Mischung
+    for (var i = array.length - 1; i > 0; i --) { //(i ist die Arraylänge) - 1 Array (wird immer um 1 abgezogen, wird kürzer); ...?
+        var j= Math.floor(Math.random() * (i + 1)); //Wörter und Sätze werden zufällig gemischt
+        [array[i], array[j]] = [array[j], array[j], array[i]]; //
     }
 }
 shuffleArray(saetze);
 function init() {
-spiel.classList.add("versteckt");
+spiel.classList.add("versteckt"); //vielleicht rauslöschen
 ende.classList.add("versteckt");
 
-document.getElementById("leicht").onclick = function() {
+document.getElementById("leicht").onclick = function(): void { //wenn man auf leicht klickt ->
     anzahlSätze = 5;
-    schwierig.classList.add("versteckt");
-    spiel.classList.remove("versteckt");
-    neuerSatz();
+    schwierig.classList.add("versteckt"); //Schwierigkeitsstufen werden versteckt
+    spiel.classList.remove("versteckt"); //Div Spiel (siehe Variable ganz oben) wird aber angezeigt -> deshalb remove versteckt
+    neuerSatz(); //wenn der 1. Satz durch ist, dann kommt der Nächste
 }
 
-document.getElementById("mittel").onclick = function() {
+document.getElementById("mittel").onclick = function(): void {
     anzahlSätze = 10;
     schwierig.classList.add("versteckt");
     spiel.classList.remove("versteckt");
@@ -117,47 +117,47 @@ document.getElementById("schwierig").onclick = function() {
 
 }} 
 
-function wortKlick(wort) {
+function wortKlick(wort): void { //Wenn ich auf ein Wort klicke, gehen die vom Spanischen Satz zu richtige Wörter
 
-    var richtigewörter = document.getElementById("wörter").childElementCount;
+    var richtigewörter = document.getElementById("wörter").childElementCount; //Wort wird definiert + Punktestand gezählt
 
-    if (wort == saetze[satz].satzSpanisch[richtigewörter]) {
+    if (wort == saetze[satz].satzSpanisch[richtigewörter]) { //Wenn das Wort richtig ist, kreiiere ich ein neues Wort unter richtige Wörter
         var span = document.createElement("span");
         span.innerHTML = wort;
         document.getElementById("wörter").appendChild(span);
 
-        punkte = punkte + 1;
+        punkte = punkte + 1; // Punkte werden addiert
 
-        for(var i = 0; i < gemischterSpanischerSatz.length; i++) {
-            if(gemischterSpanischerSatz[i] == wort) {
-                gemischterSpanischerSatz.splice(i,1);
+        for(var i = 0; i < gemischterSpanischerSatz.length; i++) { //das passiert so lange bis i die Länge des Satzes erreicht
+            if(gemischterSpanischerSatz[i] == wort) { //Wenn das Wort dem Wort im spanischen Satz entspricht
+                gemischterSpanischerSatz.splice(i,1); // Kommt ein Punkt dazu -> i= Ein Wort vom spanischen wird abgezogen(nicht sicher)
             }
         }
-        document.getElementById("satzSpanisch").innerHTML = "";
-        for (var i = 0; i < gemischterSpanischerSatz.length; i++) {
+        document.getElementById("satzSpanisch").innerHTML = ""; //jedes einzelne Wort als html element erscheinen //satz spanisch, spanischen Wörter erscheinen als html elemente
+        for (var i = 0; i < gemischterSpanischerSatz.length; i++) { //nach einem spanischen Satz soll der nächste kommen
             let wort = document.createElement("span");
             wort.innerHTML = gemischterSpanischerSatz[i];
             wort.onclick = function() {
                 wortKlick(wort.innerHTML);
             }
-            document.getElementById("satzSpanisch").appendChild(wort);
+            document.getElementById("satzSpanisch").appendChild(wort); // erstelltes Element aus Z. 136? erscheint
         }
 
-        if(richtigewörter == saetze[satz].satzSpanisch.length - 1) neuerSatz();
-    } else {
-        alert("Falsches Wort");
-        if (punkte > 0) punkte = punkte -1;
+        if(richtigewörter == saetze[satz].satzSpanisch.length - 1) neuerSatz(); //Wenn die Anzahl der richtigen Wörter im Spanischen Satz entspricht, dann erscheint der Satz
+    } else { //ansonsten
+        alert("Falsches Wort"); //Fehlermedlung bei falschem Wort
+        if (punkte > 0) punkte = punkte -1; //Punkt wird also abgezogen
     }
 
-    document.getElementById("punkte").innerHTML = punkte + " Punkte!";
+    document.getElementById("punkte").innerHTML = punkte + " Punkte!"; // Im html erscheint das Zählen der Punkte
 }
 
-function neuerSatz() {
-    document.getElementById("satzDeutsch").innerHTML = "";
-    document.getElementById("satzSpanisch").innerHTML = "";
-    document.getElementById("wörter").innerHTML = "";
-    if(satz == null) satz = 0;
-    else satz = satz + 1;
+function neuerSatz(): void {
+    document.getElementById("satzDeutsch").innerHTML = ""; // neuer deutscher Satz erscheint
+    document.getElementById("satzSpanisch").innerHTML = ""; //neuer spanischer Satz erscheint
+    document.getElementById("wörter").innerHTML = ""; //richtig angeklickte Wörter erscheinen
+    if(satz == null) satz = 0; //Wenn im Array kein Satz mehr übrig ist, dann bin ich fertig und dann komme ich im nächsten Schritt zur Ausgabe der Punkte
+    else satz = satz + 1; //andererseits wenn ich noch nicht fertig bin, kommt der nächste Satz
 
     document.getElementById("satzDeutsch").innerHTML = saetze[satz].satzDeutsch.join(" ");
     var spanisch: string[] = [...saetze[satz].satzSpanisch];
