@@ -1,72 +1,72 @@
-var punkte = 0; //Anfang der Aufzählung
-var anzahlSaetze = 0;
-var gemischterSpanischerSatz;
+var punkte = 0; //Anfang der Punkte wird 0 gesetzt
+var anzahlSaetze = 0; //Anfang der Sätze auch auf 0
+var gemischterSpanischerSatz; //Variable/Array für das shuffeln der Sätze
 var satz = null; //ist noch nicht definiert, wird später definiert, brauche das um die Sätze später zu zählen
 var saetze = [
     {
         satzSP: "Hola, ¡me llamo Pia!".split(" "),
-        satzDE: "Hallo,Ich heiße Pia!".split(" "),
+        satzDE: "Hallo,Ich heiße Pia!".split(" ")
     },
     {
         satzSP: "¿Cómo estás?".split(" "),
-        satzDE: "Wie geht es dir?".split(" "),
+        satzDE: "Wie geht es dir?".split(" ")
     },
     {
         satzSP: "¿De dónde eres?".split(" "),
-        satzDE: "Woher kommst du?".split(" "),
+        satzDE: "Woher kommst du?".split(" ")
     },
     {
         satzSP: "¿Cuándo es tu cumpleaños?".split(" "),
-        satzDE: "Wann hast du Geburstag?".split(" "),
+        satzDE: "Wann hast du Geburstag?".split(" ")
     },
     {
         satzSP: "¿Cuánto cuesta?".split(" "),
-        satzDE: "Wie viel kostet das?".split(" "),
+        satzDE: "Wie viel kostet das?".split(" ")
     },
     {
         satzSP: "Ayer me comí una torta.".split(" "),
-        satzDE: "Ich habe gestern einen Kuchen gegessen.".split(" "),
+        satzDE: "Ich habe gestern einen Kuchen gegessen.".split(" ")
     },
     {
         satzSP: "¿Dónde está el aeropuerto?".split(" "),
-        satzDE: "Wo ist der Flughafen?".split(" "),
+        satzDE: "Wo ist der Flughafen?".split(" ")
     },
     {
         satzSP: "La capital de España es Madrid.".split(" "),
-        satzDE: "Die Hauptstadt von Spanien ist Madrid.".split(" "),
+        satzDE: "Die Hauptstadt von Spanien ist Madrid.".split(" ")
     },
     {
         satzSP: "¿Qué hora es?".split(" "),
-        satzDE: "Wie spät ist es?".split(" "),
+        satzDE: "Wie spät ist es?".split(" ")
     },
     {
         satzSP: "Cuando dos se pelean, el tercero es feliz.".split(" "),
-        satzDE: "Wenn zwei sich streiten, freut sich der Dritte.".split(" "),
+        satzDE: "Wenn zwei sich streiten, freut sich der Dritte.".split(" ")
     },
     {
         satzSP: "Ya no tengo ganas de trabajar.".split(" "),
-        satzDE: "Ich habe keine Lust mehr zu arbeiten.".split(" "),
+        satzDE: "Ich habe keine Lust mehr zu arbeiten.".split(" ")
     },
     {
         satzSP: "Una bebida típica española es la sangría.".split(" "),
-        satzDE: "Ein typisch spanisches Getränk ist Sangria.".split(" "),
+        satzDE: "Ein typisch spanisches Getränk ist Sangria.".split(" ")
     },
     {
         satzSP: "El cielo es azul.".split(" "),
-        satzDE: "Der Himmel ist blau.".split(" "),
+        satzDE: "Der Himmel ist blau.".split(" ")
     },
     {
         satzSP: "¿Qué edad tiene tu hermano mayor?".split(" "),
-        satzDE: "Wie alt ist dein großer Bruder?".split(" "),
+        satzDE: "Wie alt ist dein großer Bruder?".split(" ")
     },
     {
         satzSP: "Mi día favorito es el martes.".split(" "),
-        satzDE: "Mein Lieblingstag ist Dienstag.".split(" "),
+        satzDE: "Mein Lieblingstag ist Dienstag.".split(" ")
     },
     {
         satzSP: "¿Puedes cambiar dinero por mí?".split(" "),
-        satzDE: "Können Sie mir Geld wechseln?".split(" "), //16. Satz
-    },
+        satzDE: "Können Sie mir Geld wechseln?".split(" ") //16. Satz
+    }
 ]; //Ende des Arrays mit eckigen Klammer gekennzeichnet 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) { //(i ist die Arraylänge) - 1 Array (wird immer um 1 abgezogen,wird kürzer);solange i größer als 0 ist, wird die For Schleife abgespielt
@@ -158,6 +158,7 @@ window.addEventListener("load", function () {
             document.getElementById("satzSP").appendChild(wort);
         }
         document.getElementById("satz").innerHTML = satz + 1 + " / " + anzahlSaetze;
+        document.querySelector("#progressbar").setAttribute("style", "height: " + Number(satz) / (anzahlSaetze) * 100 + "%");
         if (satz == anzahlSaetze) {
             spiel.classList.add("versteckt");
             ende.classList.remove("versteckt");
