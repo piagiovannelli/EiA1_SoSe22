@@ -69,19 +69,20 @@ var saetze = [
     }
 ]; //Ende des Arrays mit eckigen Klammer gekennzeichnet 
 function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) { //(i ist die Arraylänge - 1, nach jedem Durchlauf der Schliefe wird i um 1 reduziert, die schleife läuft so lange i größer als 0 ist
+    for (var i = array.length - 1; i > 0; i--) { //Zählschleife wird deklariert, var i steht für die Länge des arrays - 1; läuft solange i>0 ist; wird runtergezählt
         var j = Math.floor(Math.random() * (i + 1)); // Wörter und Sätze werden zufällig gemischt
-        [array[i], array[j]] = [array[j], array[i]];
+        [array[i], array[j]] = [array[j], array[i]]; // array an der stelle i und an stelle j werde getauscht 
     }
 }
-shuffleArray(saetze); // ausführen von shuffle array mit übergabe des Satz arrays
+shuffleArray(saetze); //Sätze werden in die Funktion shufflearray gepackt
 window.addEventListener("load", function () {
     console.log("start");
-    var schwierig = document.getElementById("schwierigkeit"); //Zugriff auf HTML-Element, damit später etwas damit passieren kann, deswegen wird es hier definiert
-    var spiel = document.getElementById("aufgaben");
-    var ende = document.getElementById("endstand");
+    var schwierig = document.getElementById("schwierigkeit"); // Variable für die Schwerigkeitsstufen; Es wird auf das HTML Element zugegriffen
+    var spiel = document.getElementById("aufgaben"); // Variable für die Aufgaben also dem Spiel 
+    var ende = document.getElementById("endstand"); //Variable für das Ende der Aufgaben ; Zugriff auf hmtl element
     spiel.classList.add("versteckt"); // dem spiel und dem endbildschirm die klasse 'versteckt' geben, damit sie wegen wegen der css vorgeaben in '.versteckt' nicht angezeigt werden
-    ende.classList.add("versteckt");
+    ende.classList.add("versteckt"); // Die classlist für ende wird manipuliert; Sie wird hinzugefügt jedoch wird sie nicht angezeigt (durch "Versteckt")
+    // Anklicken der Buttons bzw. der Schwierigkeitslevel //
     document.getElementById("leicht").addEventListener("click", function () {
         anzahlSaetze = 5; //die Anzahl der Sätze, die für die leichte Schwierigkeitsstufe aus dem Array genommen werden soll, wird deffiniert
         schwierig.classList.add("versteckt"); //Schwierigkeitsstufen werden versteckt
@@ -101,28 +102,29 @@ window.addEventListener("load", function () {
         neuerSatz();
     });
     document.getElementById("neustart").addEventListener("click", neustart); //bei click auf neustart wird die funktion neutart ausgeführt
+    //Funktion Wörter anklicken//
     function wortClick(wort) {
-        var richtigeWörter = document.getElementById("wörterRichtig").childElementCount; //Die anzahl der richtigen wört wird anhand der elemente in 'wörterRichtig' deffiniert
-        if (wort == saetze[satz].satzSP[richtigeWörter]) { //Wenn das Wort roichtig ist...
-            var span = document.createElement("span"); // kreiere ich ein neues Wort unter richtige Wörter
+        var richtigeWörter = document.getElementById("wörterRichtig").childElementCount; // neue Variable wird erstellt und wird auf die ID im html zugegriffen; Funktion zählt wie viele Wörter drinnen sind im Attribute richtigewoerter, childElementCount gibt number aus
+        if (wort == saetze[satz].satzSP[richtigeWörter]) { //Wenn das Wort richtig ist...
+            var span = document.createElement("span"); // kreiere ich ein neues Wort unter richtige Wörter; neue Variable wird erstellt
             span.classList.add("richtigesWort");
-            span.innerHTML = wort;
-            document.getElementById("wörterRichtig").appendChild(span);
-            punkte = punkte + 1; //Punkte werden addiert 
+            span.innerHTML = wort; // span wird gleich mit dem wort gesetzt
+            document.getElementById("wörterRichtig").appendChild(span); // span (Kind) wird an ID "wörterRichtig" (Eltern) angefügt
+            punkte = punkte + 1; //Punkte werden addiert (punkt + 1)
             for (var i = 0; i < gemischterSpanischerSatz.length; i++) { // das passiert so lange bis i die Länge des Satzes erreicht
-                if (gemischterSpanischerSatz[i] == wort) { //wenn das Wort dem Wort im spanischen Satz entspricht...
-                    gemischterSpanischerSatz.splice(i, 1); // kommt ein Punkt dazu -> i= Ein Wort vom Spanischen wird abgezogen
+                if (gemischterSpanischerSatz[i] == wort) { //wenn das Wort dem Wort im spanischen Satz entspricht...;wir prüfen ob gemischter Satz an der Stelle i = wort ist
+                    gemischterSpanischerSatz.splice(i, 1); // kommt ein Punkt dazu -> i= Ein Wort vom Spanischen wird abgezogen; wenn es der Fall ist, wird das Wort rausgelöscht, da es benutzt wird
                 }
             }
-            document.getElementById("satzSP").innerHTML = ""; //das element für den spanisch satz wird geleert
-            for (var i = 0; i < gemischterSpanischerSatz.length; i++) { // das element wir neu befüllt mit den noch verbleibenden spanisch wörtern
-                let wort = document.createElement("span");
-                wort.classList.add("wort");
-                wort.innerHTML = gemischterSpanischerSatz[i];
+            document.getElementById("satzSP").innerHTML = ""; //das element für den spanisch satz wird geleert; Zugriff auf ID "Satzsp", allgemein: satzsp zurückgesetzt, wörter werden neu hinzugefügt
+            for (var i = 0; i < gemischterSpanischerSatz.length; i++) { // das element wird neu befüllt mit den noch verbleibenden spanisch wörtern; Zählschleife, Anfang bei 0, solange i kleiner als die Länge des gemischten Satzes ist, wird i hochgezählt
+                let wort = document.createElement("span"); // Variable Wort wird erstellt, span wird drangemacht
+                wort.classList.add("wort"); // class List Wort wird hinzugefügt; hier wird manipuliert
+                wort.innerHTML = gemischterSpanischerSatz[i]; // Wort ist gleich wie die Stelle i im gemischten spanischen Satz
                 wort.addEventListener("click", function () {
-                    wortClick(wort.innerHTML);
+                    wortClick(wort.innerHTML); // Funktion wird ausgelöst
                 });
-                document.getElementById("satzSP").appendChild(wort); // das wort wird dem element für den satz hinzugefügt
+                document.getElementById("satzSP").appendChild(wort); // das wort wird an satzSp angehängt
             }
             if (richtigeWörter == saetze[satz].satzSP.length - 1)
                 neuerSatz(); //Wenn die Anzahl der richtigen Wörter im spanischen Satz entspricht ist, dann erscheint der nächste Satz
@@ -135,8 +137,9 @@ window.addEventListener("load", function () {
         }
         document.getElementById("punktestand").innerHTML = punkte + " Punkte!"; // im html erscheint das Zählen der Punkte
     }
+    //Funktion für einen neuen Satz//
     function neuerSatz() {
-        document.getElementById("satzDE").innerHTML = ""; // Felder für Sätze und Wörter werden geleert
+        document.getElementById("satzDE").innerHTML = ""; // Felder für Sätze und Wörter werden geleert; es wird auf die ID Satzde zugegriffen; dieser wird zurückgesetzt
         document.getElementById("satzSP").innerHTML = "";
         document.getElementById("wörterRichtig").innerHTML = "";
         if (satz == null) { //Wenn man am anfang des Quiz steht, wird der Satz Count auf 0 gesetzt
@@ -175,4 +178,5 @@ window.addEventListener("load", function () {
         schwierig.classList.remove("versteckt"); // der schwierigkeits bildschirm wird angezeigt
     }
 });
+// In Zusammenarbeit mit Julia B., Paula J., Aanya K., Havva K. //
 //# sourceMappingURL=end.js.map
